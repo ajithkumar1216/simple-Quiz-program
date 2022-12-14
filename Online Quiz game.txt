@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<ctype.h>
+main()
+{
+char questions[][200]={"1.who is the father of C language:",
+                       "2.all keywords in C are_____:",
+                       "3.what is short int in C programming:",
+                       "4.which keyword is used to prevent any changes in the variable within C program:",
+                       "5.which of the following cannot be variable name in C:" };
+
+char options[][200]={"a.Steve jobs","b.james gosling","c.Dennis ritchie","d.Rasmus lerdorf",
+                     "a.lower case","b.upper case","c.camel case","d.none of the mentioned",
+                     "a.the basic data","b.qualifier","c.short is the qualifier and int is basic data type","d.none",
+                     "a.immutable","b.mutable","c.const","d.volatile",
+                     "a.volatile","b.true","c.friend","d.export"};
+
+
+char answers[5]={'C','A','C','C','A'};
+int numberofquestions=sizeof(questions)/sizeof(questions[0]);
+
+char guess;
+int score;
+printf("QUIZ GAME\n");
+for(int i=0;i<numberofquestions;i++)
+    {
+    printf("~~~~~~~~~~~~~~~~~~\n");
+    printf("%s\n",questions[i]);
+    printf("~~~~~~~~~~~~~~~~~~\n");
+ for(int j=(i*4);j<(i*4)+4;j++)
+    {
+    printf("%s\n",options[j]);
+    }
+    printf("Guess :");
+    scanf("%c",&guess);
+    scanf("%c");
+
+    guess=toupper(guess);
+
+    if(guess == answers[i])
+    {
+
+
+    printf("CORRECT\n");
+    score++;
+    }
+    else
+    {
+    printf("WRONG\n");
+    }
+
+    }
+    printf("~~~~~~~~~~~~~~~~~~\n");
+    printf("FINAL SCORE:%d/%d\n",score,numberofquestions);
+    printf("~~~~~~~~~~~~~~~~~~\n");
+return 0;
+}
